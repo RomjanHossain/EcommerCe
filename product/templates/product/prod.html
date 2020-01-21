@@ -1,0 +1,9 @@
+{% extends "home.html" %}
+{% block content %}
+<h2>Products</h2>
+{%for p in qs%}
+<ul>
+    <li>{{p}}</li>
+</ul>
+{%endfor%}
+{% endblock %}
