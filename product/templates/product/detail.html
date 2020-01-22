@@ -1,0 +1,9 @@
+{% extends "home.html" %}
+{% block content %}
+<h3>{{object}}</h3>
+<h4>{{object.description}}</h4>
+<!-- <img src="" alt=""> -->
+<div class="container row">
+    <img class="rounded mx-auto d-block" src="{{object.image.url}}"  width="500" height="500">
+</div>
+{% endblock %}

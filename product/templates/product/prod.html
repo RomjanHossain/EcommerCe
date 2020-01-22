@@ -3,7 +3,9 @@
 <h2>Products</h2>
 {%for p in qs%}
 <ul>
-    <li>{{p}}</li>
+    <li>
+        <a href="{%url 'deatil' p.id%}">{{p.title}}</a> 
+    </li>
 </ul>
 {%endfor%}
 {% endblock %}
