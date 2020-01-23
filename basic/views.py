@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm, Loginform, Registerform
-from django.contrib.auth import authenticate, login, get_user_model
+from django.contrib.auth import authenticate, login, get_user_model, logout
 # Create your views here.
 
 
@@ -66,3 +66,9 @@ def register_page(request):
         password = form.cleaned_data.get('password')
         new_user = User.objects.create_user(username, email, password)
     return render(request, 'auth/regi.html', context)
+
+
+def logout_user(request):
+    logout(request)
+    # messages.success(request, "You're logged out, bitch!")
+    return redirect('home')

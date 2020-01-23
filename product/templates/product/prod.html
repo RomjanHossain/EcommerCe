@@ -1,11 +1,21 @@
 {% extends "home.html" %}
 {% block content %}
 <h2>Products</h2>
-{%for p in qs%}
-<ul>
-    <li>
-        <a href="{%url 'slugview' p.slug%}">{{p.title}}</a> 
-    </li>
-</ul>
-{%endfor%}
+<div class="container">
+    <div class="row">
+        {%for p in qs%}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="/media/{{p.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.title}}</h5>
+                    <p class="card-text">{{p.description}}</p>
+                    <br> <p class="card-text">Price :{{p.price}}</p>
+                    <a href="{%url 'slugview' p.slug%}" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
 {% endblock %}
