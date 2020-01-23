@@ -4,7 +4,7 @@
 {%for p in qs%}
 <ul>
     <li>
-        <a href="{%url 'deatil' p.id%}">{{p.title}}</a> 
+        <a href="{%url 'slugview' p.slug%}">{{p.title}}</a> 
     </li>
 </ul>
 {%endfor%}
