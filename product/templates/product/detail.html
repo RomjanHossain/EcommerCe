@@ -4,6 +4,8 @@
 <h4>{{object.description}}</h4>
 <!-- <img src="" alt=""> -->
 <div class="container row">
+    {%if object.image%}
     <img class="rounded mx-auto d-block" src="{{object.image.url}}"  width="500" height="500">
+    {%endif%}
 </div>
 {% endblock %}
