@@ -1,5 +1,10 @@
 {% extends "home.html" %}
 {% block content %}
+<div class="col-5 col-md-4">
+    {%if searched%}
+    <p>Searched for "{{searched}}"</p>
+    {%endif%}
+</div>
 <h2>Products</h2>
 <div class="container-fluid bg-light ">
     <div class="row">
