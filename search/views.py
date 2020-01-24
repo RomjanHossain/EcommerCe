@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from product.models import Product
+from django.db.models import Q
 # Create your views here.
 
 
@@ -9,7 +10,8 @@ def search_product_list_view(request):
     query = request.GET.get('q')
     print(query)
     if query is not None:
-        searched = Product.objects.filter(title__icontains=query)
+        lookups = Q(title__icontains=query) | Q(description__icontains=query)
+        searched = Product.objects.filter(lookups)
     else:
         searched = Product.objects.filter(featured=True)
 
