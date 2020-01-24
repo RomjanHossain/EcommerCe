@@ -13,6 +13,7 @@ class Product(models.Model):
     image = models.ImageField(default='img/no_img.png',
                               upload_to=upload_image_path, null=True, blank=True)
     featured = models.BooleanField(default=False)
+    times = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

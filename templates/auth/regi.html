@@ -2,10 +2,13 @@
 {% load crispy_forms_tags %}
 {%block content%}
 <div class="container">
-    <form method="post">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <button type="submit" class="btn btn-primary">Sign in</button>
+    <form method="POST">
+        {% csrf_token %}
+        {%if form.errors%}
+        <h3>Your form has an Error, <strong style="color:red;">Asshole</strong></h3>
+        {%endif%}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
 </div>
 {%endblock%}

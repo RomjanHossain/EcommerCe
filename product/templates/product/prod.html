@@ -8,8 +8,9 @@
             <div class="card" style="width: 18rem;">
                 <img src="/media/{{p.image}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{p.title}}</h5>
-                    <p class="card-text">{{p.description}}</p>
+                    <h5 class="card-title">{{p.title|title}}</h5>
+                    <p>{{p.times|timesince}}</p>
+                    <p class="card-text">{{p.description|truncatewords:24}}</p>
                     <br> <p class="card-text">Price :{{p.price}}</p>
                     <a href="{%url 'slugview' p.slug%}" class="btn btn-primary">View</a>
                 </div>
