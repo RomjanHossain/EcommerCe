@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, get_user_model, logout
 
 
 def home(request):
+    print(request.session.get('name', 'Unknown'))
     context = {
         'title': "This is home"
     }
